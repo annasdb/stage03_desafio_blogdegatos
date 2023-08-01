@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+    
+    --color-base-white: #FFFFFF;
+    --color-base-turquoise-300: #387E96;
+    --color-base-turquoise-700: #065E7C;
+    --color-base-text-500: #202024;
+    --color-base-text-900: #121214;
+}
+
+html, body, input {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    background-color: var(--color-base-white);    
+}
+
+#blog {
+    display: grid;
+    
+    grid-template-rows: max-content max-content 1fr max-content max-content;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 1.2rem 1.6rem;    
+}
+
+header, footer {
+    background-color: var(--color-base-turquoise-700);
+    
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: var(--color-base-white);
+}
+
+header .container {
+    display: flex;
+
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.container form {
+    flex: 1;
+}
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 1.2rem;
+
+    background-color: var(--color-base-turquoise-300);
+    border: 0;
+    border-radius: 0.4rem;
+
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    color: var(--color-base-white);
+}
+
+.input-wrapper input::placeholder {
+    color: var(--color-base-white);
+}
+
+.avatar {
+    width: 4.2rem;
+    height: 4.2rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.cat {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+    border-radius: .5rem;
+}
+
+main {
+    margin-top: 3rem;
+}
+
+h1 {
+    font-size: 2.4rem;
+    line-height: 3.8rem;
+    font-weight: 700;
+}
+
+.radio-wrap {
+    display: flex;
+    align-items: center;
+
+    gap: 1.2rem;
+
+    margin-top: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.radio-group {
+    position: relative;
+    margin: 0.5rem;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 4rem;
+}
+
+.radio-group:hover {
+    filter: hue-rotate(7deg) contrast(101%) opacity(.8);
+    scale: 1.2;
+}
+
+.radio-group input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+}
+
+.radio-group input + label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+}
+
+.radio-group input:checked + label {
+    transform: scale(1.2);
+}
+
+main p {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 400;
+
+    margin-bottom: 1.2rem;
+}
+
+.container h2 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+}
+
+.related {
+    margin-bottom: 4rem;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: 16rem 22rem;
+    align-items: center;
+
+    gap: 1.6rem;
+
+    margin-top: 3.2rem;
+}
+
+.article img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+    border-radius: 0.5rem;
+}
+
+.details h3 {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    font-weight: 700;
+}
+
+.details p {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+}
+
+footer .container {
+    background-color: var(--color-base-turquoise-300);
+}
+
+footer p {
+    background-color: var(--color-base-turquoise-300);
+
+    padding: 1.6rem;
+    text-align: center;
+}
+
+@media (min-width: 600px) (max-width: 800px) {
+    aside {
+        width: 100%;
+    }
+
+    .article {
+        grid-template-columns: 16rem 46rem;
+    }
+}
+
+@media (min-width: 800px) {
+    #blog {
+        grid-template: 
+        "H H" max-content
+        "R A" 1fr
+        "F F" max-content / 2fr 1fr;
+
+        gap: 2rem;
+    }
+
+    header {
+        grid-area: H;
+        padding: 0 4.8rem;
+    }
+
+    .area {
+        grid-area: R;
+        padding: 1.2rem 0 1.2rem 6.4rem;
+    }
+
+    .cat:hover {
+        filter: hue-rotate(7deg) contrast(101%) saturate(150%);
+    }
+
+    .area main {
+        padding: 0;
+        margin-top: 3.2rem;
+    }
+
+    aside {
+        grid-area: A;
+    }
+
+    .related {
+        padding-right: 4.8rem;
+    }
+
+    footer {
+        grid-area: F;
+    }
+
+    .article img:hover {
+        filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+        scale: 1.15;
+    }
+
+
+}
