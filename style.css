@@ -219,7 +219,7 @@ footer p {
     text-align: center;
 }
 
-@media (min-width: 600px) (max-width: 800px) {
+/* @media (min-width: 600px) (max-width: 800px) {
     aside {
         width: 100%;
     }
@@ -227,7 +227,7 @@ footer p {
     .article {
         grid-template-columns: 16rem 46rem;
     }
-}
+} */
 
 @media (min-width: 800px) {
     #blog {
